@@ -6,17 +6,18 @@ using namespace std;
 
 class Account
 {
-private:
-    /* data */
+private: 
+    double balance; 
+    string accountHolder; 
+
+    
+
 public:
-    Account(/* args */);
+    Account();
     ~Account();
+    void deposit(); 
+    void withdraw();
+    void showInfo();
 };
 
-Account::Account(/* args */)
-{
-}
 
-Account::~Account()
-{
-}

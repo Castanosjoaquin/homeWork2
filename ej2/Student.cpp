@@ -31,5 +31,5 @@ bool Student::operator < (Student student){
 }
 
 string Student::operator << (Student student){  
-   return student.fullName; 
+   return student.getName(); 
 }

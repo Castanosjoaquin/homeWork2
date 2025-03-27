@@ -9,7 +9,7 @@ class Student
 private:
     string fullName; 
     int studentNumb; 
-    vector<float> notes; // usar map 
+    vector<float> notes; // usar vec de pairs
 public:
     Student(string name, float numb, vector<float> notes = {});
     ~Student();
