@@ -1,0 +1,2 @@
+Para los atributos balance  y accountHolder se eligio usar protected debido a que no quiero que se puede acceder por fuera de la clase pero tambien quiero que al ser heredado la subclase pueda acceder a este, debido a que si era private esta no podira.
+Para Deposit, withDraw y showInfo se eligio public ya que quiero que cuando se instancien las subclases, estas instancias puedan acceder a estos metodos.

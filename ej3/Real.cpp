@@ -22,6 +22,6 @@ shared_ptr<Numero> Real::operator*(Numero& n) {
 }
 
 string Real::toString() {
-    return to_string(valor); //preguntar
+    return to_string(valor);
 }
 

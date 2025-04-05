@@ -1,0 +1,4 @@
+b-iv- Para hacer la copia del curso se eligio hacer un shadowcopy. Esto se debio a que si el objeto tiene memoria alocada       dinamicamente, este copiara la direccion del puntero. Nosotros queremos eso debido a que el objeto estudiante es independiente al curso, es necesario poder tener un estudiante en varios cursos y que los cursos apunten al mismo estudiante. Si se usara un deep copy se crearia una copia del estudiante, habria dos estudiante iguales, lo cual no tendria sentido.
+
+c- La clase estudiante y la clase curso tiene una relacion de Agregacion, donde se puede el curso seria conciderado un todo
+    y los estudiantes las partes. El curso mantiene una relacion con los estudinantes, pero sus ciclos de vida siguen siendo independientes el uno del otro. 

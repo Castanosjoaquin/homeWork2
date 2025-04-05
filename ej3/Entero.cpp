@@ -22,6 +22,6 @@ shared_ptr<Numero> Entero::operator*(Numero& n) {
 }
 
 string Entero::toString() {
-    return to_string(valor); //preguntar
+    return to_string(valor); 
 }
 

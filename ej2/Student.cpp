@@ -1,10 +1,12 @@
 #include "Student.h"
 
 
-Student::Student(string name, float numb, vector<float> notes = {})
-    : fullName{name},  studentNumb {numb}, notes {notes}{ }
+Student::Student(string name, int numb,vector<pair<string,float>> n)
+    : fullName{name},  studentNumb {numb}, notes {n}{ }
 
-Student:: ~Student(){}
+Student:: ~Student(){
+    cout<<"the student die"<<endl; 
+}
 
 string Student::getName(){ 
     return this->fullName; 
@@ -14,22 +16,43 @@ int Student::getStudentNumb(){
     return this->studentNumb; 
 }
 
-vector<float> Student::getNotes(){ 
+vector<pair<string, float>> Student::getNotes(){ 
     return this->notes; 
 }
-float Student::getAverage(){ 
-    vector<float> notes = getNotes(); 
+float Student::getAverage(){ // change
+    vector<pair<string, float>> notes = getNotes(); 
     float sum =0; 
-    for(float note : notes){  
-        sum +=  note; 
+    for(pair<string,float> note : notes){  
+        sum += note.second;
     }
     return (sum/notes.size()); 
 }
 
-bool Student::operator < (Student student){ 
-    return this->fullName < student.fullName; 
+void Student::printNotes(){ 
+    for ( pair<string,float> & note : notes) {
+        cout << note.first << ": " << note.second << endl;
+    }
 }
 
-string Student::operator << (Student student){  
-   return student.getName(); 
+bool operator < ( Student& student1,Student& student2)  { 
+    return student1.getName() < student2.getName(); 
+}
+
+ostream& operator << (ostream& os, Student& student) {  
+    os<< student.fullName;
+   return os; 
+}
+
+void Student::addNote(string course, float note) {
+    notes.push_back(make_pair(course, note));
+}
+
+void Student::removeNote(string course) {
+    for(int i=0; i<notes.size();i++){ 
+        if(notes[i].first == course){
+            notes.erase(notes.begin()+ i);
+            return; 
+        }
+    }
+    cout<<"the student is not in that class"<<endl; 
 }

@@ -3,21 +3,26 @@
 #include "Student.h"
 #include <vector>
 #include <algorithm>
+#include <memory>
 
 using namespace std; 
 
 class Curse
 {
 private:
-    vector<Student*> students; 
+    vector<shared_ptr<Student>> students;
+    string curseName;
 public:
-    Curse();
+    Curse(string name, vector<shared_ptr<Student>> vec= {});
     ~Curse();
-    void enroll(Student* student); 
-    void unenroll(Student* Student); 
-    bool isEnroll(Student* Student); 
+    void enroll(shared_ptr<Student>student); 
+    void unenroll(int studentNumb); 
+    bool isEnroll(int studentNumb); 
     void isFull(); 
     void printCurse(); 
+    Curse makeCopy();
+    string getCurseName(); 
+    void setName(string name); 
 
 };
 
